@@ -1,15 +1,10 @@
 <?php
 
 
-    $servername = "sql6.freesqldatabase.com";
-    $username = "sql6700012";
-    $password = "D3gevjgE4F";
 
-    // Host: 
-    // Database name: sql6700012
-    // Database user: 
-    // Database password: 
-    // Port number: 3306
+    $username = $_ENV['DB_USER'];
+    $servername = $_ENV['DB_HOST'];
+    $password = $_ENV['DB_PASS'];
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password);
