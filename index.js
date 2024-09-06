@@ -39,11 +39,23 @@ app.post('/login', (req, res) => {
   con.query("SELECT tbl_stud.student_id, tbl_stud.f_name, tbl_stud.m_name, tbl_stud.l_name, tbl_sect.name as section, tbl_course.name as course ,tbl_course.description as courseName, tbl_stud.email, tbl_stud.gender, tbl_stud.account_status FROM sql12729827.tbl_student_info as tbl_stud INNER JOIN sql12729827.tbl_section_info as tbl_sect ON tbl_stud.section_id = tbl_sect.section_id INNER JOIN sql12729827.tbl_course_info as tbl_course ON tbl_stud.course_id = tbl_course.course_id WHERE tbl_stud.student_id = ? && tbl_stud.password = ?",[studId, pass],(err,result,fields)=>{
 
     if(err){
-      return console.log(err);
+      return res.send(err);
     }
-    return console.log(result);
+    return res.send(result);
   })
-
   
 })
 
+app.post('/getBody',(req, res)=>{
+
+  res.send(res);
+  res.send(req);
+
+})
+
+app.post('/postBody',(req, res)=>{
+
+  res.send(res);
+  res.send(req);
+
+})
