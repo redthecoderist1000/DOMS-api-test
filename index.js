@@ -46,16 +46,16 @@ app.post('/login', (req, res) => {
   
 })
 
-app.post('/getBody',(req, res)=>{
+app.get('/getBody',(req, res)=>{
 
-  res.send(res);
-  res.send(req);
-
+  var post_body = req.body;
+  res.send(post_body);
+  
 })
 
 app.post('/postBody',(req, res)=>{
 
-  res.send(res);
-  res.send(req);
+  var post_body = req.body;
+  res.send(post_body);
 
 })
